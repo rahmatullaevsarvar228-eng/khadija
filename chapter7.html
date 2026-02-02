@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Глава 7. Финальная Буря — Путешествие Хадижи</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    .chapter-container {
+      max-width: 950px;
+      margin: 3rem auto;
+      padding: 3rem 2.5rem;
+      background: rgba(20, 20, 60, 0.7);
+      border-radius: 30px;
+      backdrop-filter: blur(18px);
+      border: 2px solid rgba(255,105,180,0.3);
+      box-shadow: 0 0 70px rgba(255,105,180,0.5);
+      animation: fadeInEpic 2s ease;
+    }
+
+    @keyframes fadeInEpic {
+      from { opacity: 0; transform: scale(0.9) translateY(50px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .chapter-title {
+      font-family: 'Pacifico', cursive;
+      font-size: 4rem;
+      color: #ff69b4;
+      text-align: center;
+      margin-bottom: 3rem;
+      text-shadow: 0 0 40px #ff69b4, 0 0 80px #8a2be2, 0 0 120px #ff1493;
+      animation: epicGlow 6s infinite alternate;
+    }
+
+    @keyframes epicGlow {
+      from { text-shadow: 0 0 30px #ff69b4; }
+      to { text-shadow: 0 0 80px #ff69b4, 0 0 120px #8a2be2, 0 0 160px #ff1493; }
+    }
+
+    .chapter-text p {
+      font-size: 1.22rem;
+      line-height: 1.9;
+      margin-bottom: 1.6rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: textEpic 1.2s forwards;
+      animation-delay: calc(var(--order) * 0.35s);
+    }
+
+    @keyframes textEpic {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    blockquote {
+      background: rgba(255,255,255,0.1);
+      border-left: 8px solid #ff69b4;
+      padding: 1.5rem 2.5rem;
+      margin: 2.5rem 0;
+      font-style: italic;
+      color: #ffc0cb;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(255,105,180,0.4);
+      font-size: 1.3rem;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4rem;
+      gap: 1.5rem;
+    }
+
+    button {
+      flex: 1;
+      padding: 1.4rem;
+      background: linear-gradient(45deg, #ff69b4, #c71585, #8a2be2);
+      background-size: 200% 200%;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.5s;
+      box-shadow: 0 0 40px rgba(255,105,180,0.6);
+      animation: buttonPulse 3s infinite;
+    }
+
+    @keyframes buttonPulse {
+      0%, 100% { box-shadow: 0 0 40px rgba(255,105,180,0.6); }
+      50% { box-shadow: 0 0 70px rgba(255,105,180,0.9); }
+    }
+
+    button:hover {
+      transform: translateY(-8px) scale(1.08);
+      box-shadow: 0 0 80px rgba(255,105,180,1);
+      background-position: right center;
+    }
+
+    #music-control {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: rgba(0,0,0,0.7);
+      padding: 18px 28px;
+      border-radius: 60px;
+      font-size: 2rem;
+      cursor: pointer;
+      backdrop-filter: blur(15px);
+      border: 2px solid #ff69b4;
+      box-shadow: 0 0 40px rgba(255,105,180,0.7);
+      transition: all 0.4s;
+      z-index: 1000;
+    }
+
+    #music-control:hover {
+      transform: scale(1.2) rotate(15deg);
+      box-shadow: 0 0 80px rgba(255,105,180,1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-container">
+    <h1 class="chapter-title">Глава 7. Финальная Буря</h1>
+
+    <div class="chapter-text">
+      <p style="--order: 1;">Центр Этериума был раной в небе. Тёмный Вихрь висел там — огромный, чёрный, пульсирующий, как живое сердце тьмы. Он пожирал свет: острова гасли один за другим, реки останавливались, деревья теряли листья. Гул стоял такой, что земля дрожала, а воздух резал лёгкие.</p>
+
+      <p style="--order: 2;">Хадижа, Элиан и Аэрон стояли на последнем уцелевшем острове. Кулон на груди Хадижи сиял всеми четырьмя цветами — огонь, вода, земля, воздух. Он был готов. Но цена активации была ясна: кто-то должен отдать часть себя.</p>
+
+      <p style="--order: 3;">Элиан взял её за руки. Его голос дрожал — впервые за всё время.</p>
+
+      <p style="--order: 4;">«Хадижа… если это будет стоить тебе жизни, я не позволю. Мы найдём другой способ».</p>
+
+      <p style="--order: 5;">Она покачала головой. Её глаза были спокойными — как озеро после бури.</p>
+
+      <p style="--order: 6;">«Нет другого способа. Но я не боюсь. Потому что я нашла то, чего искала всю жизнь. Не в Этериуме. В тебе. В нас. Я готова».</p>
+
+      <p style="--order: 7;">Аэрон шагнул вперёд.</p>
+
+      <p style="--order: 8;">«Позволь мне. Я уже был в тьме. Я могу…»</p>
+
+      <p style="--order: 9;">Хадижа улыбнулась ему — мягко, как сестра.</p>
+
+      <p style="--order: 10;">«Ты только вернулся. Пусть твой брат увидит, как ты живёшь. А я… я уже жила. И это было прекрасно».</p>
+
+      <p style="--order: 11;">Она повернулась к Элиану. Подняла руку, коснулась его щеки.</p>
+
+      <p style="--order: 12;">«Помнишь, как ты сказал, что я — твой воздух? А ты — мой огонь. Моя вода. Моя земля. Всё сразу. Я люблю тебя, Элиан. Не как героиня любит стража. Как Хадижа любит мужчину, который увидел её настоящую».</p>
+
+      <p style="--order: 13;">Он прижал её к себе — крепко, отчаянно. Поцелуй был солёным от слёз, но полным света. Ветер вокруг них закружился — не разрушительный, а нежный, как объятие.</p>
+
+      <p style="--order: 14;">«Я люблю тебя больше, чем этот мир. Больше, чем воздух. Если ты уйдёшь… я не смогу дышать».</p>
+
+      <p style="--order: 15;">Хадижа отстранилась. Улыбнулась сквозь слёзы.</p>
+
+      <p style="--order: 16;">«Тогда дыши за нас двоих».</p>
+
+      <p style="--order: 17;">Она шагнула к краю острова. Подняла кулон. Четыре эссенции вспыхнули — ярче солнца. Свет хлынул вперёд, в сердце Вихря.</p>
+
+      <p style="--order: 18;">Вихрь зарычал. Он бросился на неё — чёрные щупальца, холод, пустота. Но Хадижа стояла. Свет от кулона рос. Он проникал в тьму, рассеивал её, как рассвет рассеивает ночь.</p>
+
+      <p style="--order: 19;">Боль пришла внезапно — острая, как будто кто-то вырывал часть души. Хадижа упала на колени. Но не закричала. Она шептала:</p>
+
+      <blockquote style="--order: 20;">«Я не боюсь. Я живая. Я люблю. И этого достаточно».</blockquote>
+
+      <p style="--order: 21;">Свет стал невыносимым. Вихрь сжался — раз, другой — и лопнул, как мыльный пузырь. Остатки тьмы рассеялись ветром. Небо очистилось. Острова снова засияли. Реки потекли вверх. Деревья запели.</p>
+
+      <p style="--order: 22;">Хадижа упала. Кулон потух. Элиан подхватил её, прижал к груди.</p>
+
+      <p style="--order: 23;">«Хадижа! Нет… пожалуйста…»</p>
+
+      <p style="--order: 24;">Она открыла глаза — слабо, но улыбнулась.</p>
+
+      <p style="--order: 25;">«Я… сделала это. Этериум спасён».</p>
+
+      <p style="--order: 26;">Аэрон опустился рядом. Его голос дрожал:</p>
+
+      <p style="--order: 27;">«Ты спасла нас всех. Спасибо… сестра».</p>
+
+      <p style="--order: 28;">Хадижа посмотрела на Элиана. Её рука коснулась его лица.</p>
+
+      <p style="--order: 29;">«Не грусти. Я не ухожу. Я просто… вернусь домой. Но часть меня останется здесь. Со мной. С тобой».</p>
+
+      <p style="--order: 30;">Свет вспыхнул снова — мягкий, золотой. Кулон ожил. Он не требовал жертвы полностью. Он взял только воспоминания о боли — те, что держали её в прошлом. Хадижа почувствовала лёгкость. Силу. Жизнь.</p>
+
+      <p style="--order: 31;">Она села. Обняла Элиана.</p>
+
+      <p style="--order: 32;">«Я могу вернуться. В Ташкент. Но я буду приходить сюда. К тебе. К нам».</p>
+
+      <p style="--order: 33;">Элиан плакал — тихо, счастливо.</p>
+
+      <p style="--order: 34;">«Тогда я буду ждать. Каждый вечер играть для тебя. И каждый раз, когда ты придёшь, я буду напоминать тебе: ты — самое прекрасное чудо этого мира и всех миров».</p>
+
+      <p style="--order: 35;">Свет окутал её. Этериум попрощался — нежно, как старый друг.</p>
+
+      <p style="--order: 36;">Хадижа открыла глаза в своей комнате в Ташкенте. Дождь стучал по окну. Кулон лежал на груди — тёплый, живой.</p>
+
+      <p style="--order: 37;">Она улыбнулась. Встала. Подошла к окну. Небо было ясным — звёзды сияли ярче обычного.</p>
+
+      <p style="--order: 38;">Где-то там, в другом мире, флейта играла мелодию «12».</p>
+
+      <p style="--order: 39;">И Хадижа знала: это не конец. Это начало.</p>
+
+      <p style="--order: 40;">Она повернулась к зеркалу. Посмотрела на себя — настоящую, целую, любимую.</p>
+
+      <p style="--order: 41;">«Ну что ж… поехали дальше».</p>
+    </div>
+
+    <div class="nav-buttons">
+      <button type="button" onclick="window.location.href='chapter6.html'">← Назад</button>
+      <button type="button" onclick="window.location.href='index.html'">Вернуться к началу</button>
+    </div>
+  </div>
+
+  <!-- Плавающая кнопка музыки -->
+  <div id="music-control">▶️</div>
+
+  <!-- Музыка в корне проекта -->
+  <audio id="bg-music" loop>
+    <source src="12.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+  <script>
+    // Установка прогресса финальной главы 7 и запуск музыки
+    setProgress(7);
+    tryPlayMusic();
+
+    // Отладка: увидишь в консоли, что финал загружен
+    console.log("Финальная глава 7 загружена. Прогресс сохранён как 7. Музыка должна продолжаться до конца.");
+  </script>
+</body>
+</html>

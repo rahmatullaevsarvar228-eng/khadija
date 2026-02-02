@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Глава 6. Крылья Воздуха — Путешествие Хадижи</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    .chapter-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2.5rem;
+      background: rgba(20, 20, 60, 0.65);
+      border-radius: 25px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,105,180,0.25);
+      box-shadow: 0 0 50px rgba(255,105,180,0.4);
+      animation: fadeInContainer 1.5s ease;
+    }
+
+    @keyframes fadeInContainer {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .chapter-title {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.5rem;
+      color: #ff69b4;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      text-shadow: 0 0 30px #ff69b4, 0 0 60px #8a2be2;
+      animation: glowTitle 4s infinite alternate;
+    }
+
+    @keyframes glowTitle {
+      from { text-shadow: 0 0 20px #ff69b4; }
+      to { text-shadow: 0 0 50px #ff69b4, 0 0 80px #8a2be2; }
+    }
+
+    .chapter-text p {
+      font-size: 1.18rem;
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: textAppear 1s forwards;
+      animation-delay: calc(var(--order) * 0.3s);
+    }
+
+    @keyframes textAppear {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    blockquote {
+      background: rgba(255,255,255,0.08);
+      border-left: 6px solid #ff69b4;
+      padding: 1.2rem 2rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #ffc0cb;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255,105,180,0.3);
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3.5rem;
+      gap: 1rem;
+    }
+
+    button {
+      flex: 1;
+      padding: 1.2rem;
+      background: linear-gradient(45deg, #ff69b4, #c71585);
+      color: white;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 25px rgba(255,105,180,0.5);
+    }
+
+    button:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 0 50px rgba(255,105,180,0.8);
+    }
+
+    #music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.6);
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      border: 1px solid #ff69b4;
+      box-shadow: 0 0 30px rgba(255,105,180,0.6);
+      transition: all 0.3s;
+      z-index: 1000;
+    }
+
+    #music-control:hover {
+      transform: scale(1.15) rotate(10deg);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-container">
+    <h1 class="chapter-title">Глава 6. Крылья Воздуха</h1>
+
+    <div class="chapter-text">
+      <p style="--order: 1;">Небесные Бастионы парили выше всех облаков — огромные крепости из белого камня и света, окружённые вихрями ветра. Здесь воздух был таким чистым, что дышать было почти больно. Последняя Эссенция — Воздуха — ждала в самом сердце Бастиона, охраняемая тем, кого Элиан давно оплакал.</p>
+
+      <p style="--order: 2;">Они поднимались по светящимся ступеням, которые появлялись под ногами и исчезали позади. Элиан молчал — его лицо было напряжённым, словно он шёл на казнь.</p>
+
+      <p style="--order: 3;">Хадижа взяла его за руку.</p>
+
+      <p style="--order: 4;">«Что-то не так?»</p>
+
+      <p style="--order: 5;">Он остановился. Посмотрел на неё — глаза полны боли, которую он прятал месяцами.</p>
+
+      <p style="--order: 6;">«Аэрон… мой брат. Все думали, что он погиб в первой войне с Вихрем. Но если он здесь… значит, Вихрь держит его. И мне придётся сражаться с ним».</p>
+
+      <p style="--order: 7;">Хадижа сжала его пальцы.</p>
+
+      <p style="--order: 8;">«Ты не один. Мы вместе освободим его. Ты не потеряешь ещё одного человека».</p>
+
+      <p style="--order: 9;">Элиан прижал её руку к своей груди.</p>
+
+      <p style="--order: 10;">«Ты уже вернула мне то, что я считал потерянным навсегда. Надежду. Себя. Твоя сила… она не в эссенциях. Она в том, как ты смотришь на меня — будто я достоин спасения. Как ты стоишь рядом, даже когда я боюсь. Ты — мой воздух, Хадижа. Без тебя я бы задохнулся».</p>
+
+      <p style="--order: 11;">Она улыбнулась — мягко, но уверенно.</p>
+
+      <p style="--order: 12;">«Тогда полетим дальше. Вместе».</p>
+
+      <p style="--order: 13;">Они достигли вершины. В центре зала — огромный вихрь света. А в нём — Аэрон. Высокий, с крыльями из чистого ветра, глаза затянуты тенью. Он выглядел как Элиан, но холоднее, жёстче.</p>
+
+      <p style="--order: 14;">«Брат… — прошептал Элиан. — Ты жив?»</p>
+
+      <p style="--order: 15;">Аэрон повернулся. Голос был искажённым, как ветер в бурю:</p>
+
+      <p style="--order: 16;">«Я мёртв для тебя. Вихрь дал мне силу. А ты принёс… её».</p>
+
+      <p style="--order: 17;">Он посмотрел на Хадижу. В его глазах мелькнуло узнавание — и ярость.</p>
+
+      <p style="--order: 18;">«Избранная. Та, что должна умереть».</p>
+
+      <p style="--order: 19;">Вихрь взревел. Аэрон поднял руку — и воздух стал плотным, как стена. Удар ветра отбросил Элиана назад. Хадижа встала впереди.</p>
+
+      <p style="--order: 20;">«Я не умру. И ты не заставишь меня».</p>
+
+      <p style="--order: 21;">Она подняла кулон. Все четыре эссенции засияли — огонь, вода, земля, воздух. Свет окутал её. Она почувствовала, как ветер подчиняется ей — не сопротивляется, а танцует.</p>
+
+      <p style="--order: 22;">Аэрон атаковал снова — вихрь стрел из чистого воздуха. Хадижа махнула рукой — и стрелы рассеялись, как дым.</p>
+
+      <p style="--order: 23;">«Ты не можешь победить меня! — крикнул Аэрон. — Вихрь сильнее!»</p>
+
+      <p style="--order: 24;">Элиан поднялся. Его флейта оказалась в руках. Он заиграл — ту самую мелодию «12». Ноты разнеслись по залу, пробивая тьму в глазах Аэрона.</p>
+
+      <p style="--order: 25;">Хадижа шагнула ближе. Её голос был тихим, но сильным:</p>
+
+      <p style="--order: 26;">«Аэрон… ты не Вихрь. Ты брат. Ты помнишь, как играл с Элианом на крыше, как обещал защищать его? Эта тьма — не ты. Отпусти её».</p>
+
+      <p style="--order: 27;">Аэрон замер. В его глазах мелькнуло что-то человеческое. Боль. Воспоминание.</p>
+
+      <p style="--order: 28;">Хадижа протянула руку — не для удара, а для помощи.</p>
+
+      <p style="--order: 29;">«Вернись к нам».</p>
+
+      <p style="--order: 30;">Тьма в нём дрогнула. Вихрь завыл громче, пытаясь удержать. Но мелодия Элиана стала сильнее. Аэрон упал на колени. Тень вышла из него — чёрный дым, который рассеялся в воздухе.</p>
+
+      <p style="--order: 31;">Аэрон поднял голову. Глаза чистые.</p>
+
+      <p style="--order: 32;">«Хадижа… спасибо. Ты… спасла меня».</p>
+
+      <p style="--order: 33;">Элиан бросился к брату, обнял его. Слёзы текли по щекам обоих. Хадижа стояла рядом, чувствуя, как кулон нагревается — Эссенция Воздуха вошла в него последней.</p>
+
+      <p style="--order: 34;">Теперь Ключ был полон.</p>
+
+      <p style="--order: 35;">Элиан повернулся к ней. Его глаза сияли.</p>
+
+      <p style="--order: 36;">«Ты сделала невозможное. Ты вернула мне брата. Вернула меня самого. Хадижа… я люблю тебя. Не как страж любит избранную. Как мужчина любит женщину, которая сделала его мир целым».</p>
+
+      <p style="--order: 37;">Она шагнула к нему. Их губы встретились — мягко, нежно, но с силой всех эссенций внутри. Поцелуй длился вечность — воздух вокруг них закружился, как вихрь света.</p>
+
+      <p style="--order: 38;">Когда они отстранились, Аэрон улыбнулся слабо.</p>
+
+      <p style="--order: 39;">«Теперь… финал. Вихрь ждёт вас в центре Этериума. И он зол».</p>
+
+      <p style="--order: 40;">Хадижа взяла руку Элиана.</p>
+
+      <p style="--order: 41;">«Мы готовы».</p>
+
+      <p style="--order: 42;">Небо над ними потемнело. Гром раздался — не природный, а живой.</p>
+
+      <p style="--order: 43;">Последняя битва начиналась.</p>
+    </div>
+
+    <div class="nav-buttons">
+      <button type="button" onclick="window.location.href='chapter5.html'">← Назад</button>
+      <button type="button" onclick="window.location.href='chapter7.html'">Дальше →</button>
+    </div>
+  </div>
+
+  <!-- Плавающая кнопка музыки -->
+  <div id="music-control">▶️</div>
+
+  <!-- Музыка в корне проекта -->
+  <audio id="bg-music" loop>
+    <source src="12.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+  <script>
+    // Установка прогресса главы 6 и запуск музыки
+    setProgress(6);
+    tryPlayMusic();
+
+    // Отладка: увидишь в консоли, что страница загрузилась
+    console.log("Глава 6 загружена. Прогресс сохранён как 6. Музыка должна продолжаться.");
+  </script>
+</body>
+</html>

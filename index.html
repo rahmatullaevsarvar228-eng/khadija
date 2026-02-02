@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Путешествие Хадижи · Вход в волшебство</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff69b4;
+      --purple: #8a2be2;
+      --glow: 0 0 30px rgba(255, 105, 180, 0.6);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: bgMove 15s ease infinite;
+      overflow: hidden;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .login-container {
+      text-align: center;
+      background: rgba(20, 20, 60, 0.7);
+      padding: 3rem 2.5rem;
+      border-radius: 25px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,105,180,0.3);
+      box-shadow: var(--glow);
+      max-width: 480px;
+      width: 90%;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: var(--pink);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 20px var(--pink);
+      animation: glowText 2s infinite alternate;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px var(--pink); }
+      to { text-shadow: 0 0 40px var(--pink), 0 0 60px var(--purple); }
+    }
+
+    .login-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid var(--pink);
+      margin: 1.5rem auto;
+      box-shadow: var(--glow);
+      animation: pulsePhoto 3s infinite;
+    }
+
+    @keyframes pulsePhoto {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    input {
+      width: 100%;
+      padding: 1rem;
+      margin: 1rem 0;
+      border: 2px solid var(--pink);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 1.2rem;
+      background: linear-gradient(45deg, var(--pink), var(--purple));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all 0.3s;
+      box-shadow: var(--glow);
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 40px rgba(255,105,180,0.8);
+    }
+
+    .error {
+      color: #ff6b6b;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    #music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0,0,0,0.6);
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--pink);
+      box-shadow: var(--glow);
+      transition: all 0.3s;
+    }
+
+    #music-control:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h1>Хадижа… твой путь начинается ✨</h1>
+    <img src="xadija.jpg" alt="Хадижа" class="login-photo">
+
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Xadija" required>
+      <input type="password" id="password" placeholder="123" required>
+      <button type="submit">Открыть портал в магию</button>
+    </form>
+
+    <p id="error" class="error">Неверный логин или пароль… Попробуй снова 💔</p>
+  </div>
+
+  <!-- Плавающая кнопка музыки -->
+  <div id="music-control">▶️</div>
+
+  <!-- Музыка в корне -->
+  <audio id="bg-music" loop>
+    <source src="12.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const CORRECT_LOGIN = "Xadija";
+    const CORRECT_PASS = "123";
+
+    const music = document.getElementById('bg-music');
+    const musicControl = document.getElementById('music-control');
+    const loginForm = document.getElementById('login-form');
+    const error = document.getElementById('error');
+
+    // Seamless музыка: восстанавливаем состояние
+    function initMusic() {
+      const savedTime = localStorage.getItem('musicTime');
+      const wasPaused = localStorage.getItem('musicPaused');
+
+      if (savedTime) music.currentTime = parseFloat(savedTime);
+      if (wasPaused === '0') tryPlayMusic();
+
+      music.addEventListener('timeupdate', () => {
+        if (Math.floor(music.currentTime) % 5 === 0) {
+          localStorage.setItem('musicTime', music.currentTime);
+        }
+      });
+
+      music.addEventListener('play', () => localStorage.setItem('musicPaused', '0'));
+      music.addEventListener('pause', () => localStorage.setItem('musicPaused', '1'));
+    }
+
+    function tryPlayMusic() {
+      music.play().catch(() => {
+        document.body.addEventListener('click', () => music.play(), {once: true});
+      });
+      musicControl.innerHTML = '⏸️';
+    }
+
+    // Управление кнопкой музыки
+    musicControl.addEventListener('click', () => {
+      if (music.paused) {
+        music.play();
+        musicControl.innerHTML = '⏸️';
+      } else {
+        music.pause();
+        musicControl.innerHTML = '▶️';
+      }
+    });
+
+    // Логин
+    loginForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
+
+      if (user === CORRECT_LOGIN && pass === CORRECT_PASS) {
+        localStorage.setItem("journeyProgress", "1");
+        tryPlayMusic(); // стартуем музыку
+        window.location.href = "chapter1.html";
+      } else {
+        error.style.display = 'block';
+      }
+    });
+
+    // Инициализация музыки при загрузке
+    initMusic();
+  </script>
+</body>
+</html>

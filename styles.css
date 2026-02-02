@@ -1,0 +1,251 @@
+/* styles.css — максимально пиздатый дизайн для Путешествия Хадижи */
+
+:root {
+  --bg-start: #0f0c29;
+  --bg-mid: #302b63;
+  --bg-end: #24243e;
+  --text: #e0e0ff;
+  --accent: #ff69b4;
+  --accent-dark: #c71585;
+  --accent-glow: rgba(255, 105, 180, 0.6);
+  --purple-glow: rgba(138, 43, 226, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-mid), var(--bg-end));
+  background-size: 300% 300%;
+  color: var(--text);
+  min-height: 100vh;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  animation: bgFlow 20s ease infinite;
+}
+
+@keyframes bgFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  text-align: center;
+  max-width: 520px;
+  padding: 3.5rem 2.5rem;
+  background: rgba(20, 20, 60, 0.65);
+  border-radius: 28px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,105,180,0.25);
+  box-shadow: 0 0 80px var(--accent-glow);
+  animation: loginFade 1.8s ease;
+}
+
+@keyframes loginFade {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.login-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--accent);
+  margin: 1.8rem auto;
+  box-shadow: 0 0 40px var(--accent-glow);
+  animation: photoPulse 4s infinite ease-in-out;
+}
+
+@keyframes photoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+input, button {
+  display: block;
+  width: 100%;
+  padding: 1.1rem;
+  margin: 1rem 0;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  border: none;
+  transition: all 0.3s;
+}
+
+input {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border: 2px solid rgba(255,105,180,0.3);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+button {
+  background: linear-gradient(45deg, var(--accent), var(--accent-dark));
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 60px var(--accent-glow);
+}
+
+.error {
+  color: #ff6b6b;
+  margin-top: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff6b6b;
+}
+
+.hidden { display: none !important; }
+
+/* Стили для глав (chapter*.html) */
+.chapter-container {
+  max-width: 780px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: rgba(20, 20, 60, 0.6);
+  border-radius: 24px;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,105,180,0.2);
+  line-height: 1.8;
+  box-shadow: 0 0 70px rgba(255,105,180,0.3);
+}
+
+.chapter-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3.2rem;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 40px var(--accent-glow);
+  animation: titleGlow 5s infinite alternate;
+}
+
+@keyframes titleGlow {
+  from { text-shadow: 0 0 20px var(--accent-glow); }
+  to { text-shadow: 0 0 60px var(--accent-glow), 0 0 90px var(--purple-glow); }
+}
+
+.chapter-text {
+  font-size: 1.18rem;
+}
+
+.chapter-text p {
+  margin-bottom: 1.4rem;
+  opacity: 0;
+  animation: textFadeIn 1.2s forwards;
+  animation-delay: calc(var(--p-index) * 0.35s);
+}
+
+@keyframes textFadeIn {
+  to { opacity: 1; }
+}
+
+blockquote {
+  background: rgba(255,105,180,0.08);
+  border-left: 6px solid var(--accent);
+  padding: 1.2rem 2rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #ffb6c1;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255,105,180,0.2);
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  gap: 1.5rem;
+}
+
+.nav-buttons button {
+  flex: 1;
+  padding: 1.2rem;
+  background: linear-gradient(45deg, var(--accent), var(--accent-dark));
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s;
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.nav-buttons button:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 60px var(--accent-glow);
+}
+
+/* Музыкальный контроллер */
+#music-control {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: rgba(0,0,0,0.6);
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 40px var(--accent-glow);
+  transition: all 0.4s;
+  z-index: 9999;
+}
+
+#music-control:hover {
+  transform: scale(1.2) rotate(15deg);
+  box-shadow: 0 0 80px var(--accent-glow);
+}
+
+/* Общие улучшения */
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Для мобильных */
+@media (max-width: 600px) {
+  .chapter-container {
+    margin: 2rem 1rem;
+    padding: 1.8rem;
+  }
+
+  .chapter-title {
+    font-size: 2.8rem;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+  }
+
+  .nav-buttons button {
+    margin-bottom: 1rem;
+  }
+}
